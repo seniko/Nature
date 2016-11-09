@@ -10,8 +10,10 @@ body {
 
 .wrap {
     position: relative;
-    width: 1036px;
-    height: 1036px;
+    width: 100%;
+    max-width: 1036px;
+    height: auto;
+    min-height: 100%;
     margin: 0 auto;
 }
 
@@ -19,6 +21,7 @@ body {
     float: left;
     width: 141px;
     height: 1036px;
+    min-height: 100%;
     background-color: #b6d2b9;
     margin-left: 15px;
 }
@@ -47,19 +50,20 @@ a:hover {
 }
 
 main {
-    float: left;
-    margin-left: 32px;
-    width: 848px;
-    height: 851px;
+    margin-left: 188px;
+    margin-bottom: 110px;
+    padding-top: 51px;
+    height: 100%;
+    min-height: 800px;/* 851-51 */
     background-color: #a9c8ca;
 }
 
-.big-frame {
+.frame {
     box-sizing: border-box;
-    margin-left: 61px;
-    margin-top: 48px;
-    width: 736px;
-    height: 736px;
+    margin: 0 auto 64px auto;
+    width: 86.79245283018868%;
+    height: auto;
+    min-height: 736px;
     background-color: #b6d2b9;
     border: 8px solid #8fb3ae;
     border-radius: 50px;
@@ -68,17 +72,21 @@ main {
 .big-pic {
     margin: 18px auto 28px;
     box-sizing: border-box;
-    width: 692px;
-    height: 426px;
+    width: 96%;
+    height: auto;
+    max-height: 426px;
     border: 16px solid #ece7ca;
     border-radius: 50px;
     overflow: hidden;
-    background: url("../pics/1.jpg") no-repeat center center;
-    background-size: cover;
+}
+
+.big-pic img{
+    max-width: 100%;
+    height: auto;
 }
 
 .small-pic-place {
-    margin-left: 11px;
+    text-align: center;
 }
 .small-pic {
     box-sizing: border-box;
@@ -105,11 +113,12 @@ main {
 .small-pic:nth-child(3){
     background: url("../pics/4.jpg") no-repeat center center;
     background-size: cover;
+
 }
 
 .dots {
     position: absolute;
-    bottom: 153px;
+    bottom: 132px;
     left: 163px;
 
 }
@@ -122,15 +131,78 @@ main {
 .page-footer {
     position: absolute;
     bottom: 22px;
-    width: 1036px;
+    top: 105%;
+    width: 100%;
+    max-width: 1036px;
     height: 127px;
     background-color: #b6d2b9;
 }
 
 .page-footer h1 {
+    float: right;
     font-size: 58px;
-    margin-left: 774px;
+    margin-right: 56px;
     margin-top: 30px;
     font-family: Harlow;
 }
 
+@media screen and (max-width: 920px) {
+    .dots ul li:nth-child(n + 5) {display: none}
+    .side-bar { min-height: 100vh;}
+}
+
+@media screen and (max-width: 750px) {
+    .small-pic:nth-child(3){ margin-right: 18px; }
+    .side-bar { min-height: 130vh; }
+}
+
+@media screen and (max-width: 503px) {
+    .side-bar {
+        float: left;
+        width: 110px;
+        height: 1190px;
+        min-height: 100%;
+        background-color: #b6d2b9;
+        margin-left: 0;
+    }
+
+    main {
+        margin-left: 117px;
+        margin-bottom: 100px;
+        padding-top: 51px;
+        height: 100%;
+        min-height: 800px; /* 851-51 */
+        background-color: #a9c8ca;
+        width: 234px;
+    }
+
+    .frame {
+        box-sizing: border-box;
+        margin: 0 auto 64px auto;
+        width: 234px;
+        height: auto;
+        min-height: 736px;
+        background-color: #b6d2b9;
+        border: 8px solid #8fb3ae;
+        border-radius: 50px;
+    }
+    .big-pic {
+        margin: 18px auto 28px;
+        box-sizing: border-box;
+        width: 218px;
+        height: auto;
+        max-height: 426px;
+        border: 16px solid #fbe9ae;;
+        border-radius: 50px;
+        overflow: hidden;
+    }
+
+    .big-pic img{
+        max-width: 100%;
+        height: auto;
+    }
+
+    .small-pic-place {
+        margin-left: 0;
+    }
+}
